@@ -1,0 +1,41 @@
+<LinearLayout
+    android:id="@+id/tab3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/newsListView">
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/progressBar3"
+        android:layout_width="match_parent"
+        android:layout_height="340sp"
+        android:gravity="center">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteX="0sp"
+            tools:layout_editor_absoluteY="303sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fail3"
+        android:layout_width="match_parent"
+        android:layout_height="340sp"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:text="Error! Failed to load data."
+        android:visibility="gone"/>
+
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--android:background="@drawable/table_row_bg">-->
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Day's Range"
+        android:id="@+id/key"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:padding="8sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="0sp"/>
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="135sp"
+        android:padding="8sp"
+        android:text="AAP"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@+id/key"
+        app:layout_constraintTop_toBottomOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@+id/value"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

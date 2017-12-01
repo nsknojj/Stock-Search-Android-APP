@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Day's Range"
+        android:id="@+id/key"
+        android:textSize="17sp"
+        android:padding="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="10sp"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100sp"
+        android:padding="10sp"
+        android:text="AAP"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@+id/key"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190sp"
+        android:padding="10sp"
+        android:text="AAP"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="@+id/key"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

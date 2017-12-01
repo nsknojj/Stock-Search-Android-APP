@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nsknojj.stocksearch.MainActivity"
+    android:background="@drawable/tile_background"
+    android:tileMode="repeat">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:text="Stock Market Search"
+        android:textSize="25sp"
+        android:textColor="@android:color/primary_text_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.nsknojj.stocksearch.util.DelayAutoCompleteTextView
+        android:id="@+id/stock_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8sp"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="8sp"
+        android:ems="16"
+        android:inputType="textPersonName"
+        android:text=""
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"
+        android:completionThreshold="1" />
+
+    <Button
+        android:background="@null"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/button_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56sp"
+        android:layout_marginTop="12sp"
+        android:onClick="goToDetail"
+        android:text="Get Quote"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stock_symbol" />
+
+    <Button
+        android:textSize="16sp"
+        android:background="@null"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8sp"
+        android:layout_marginStart="72sp"
+        android:layout_marginTop="12sp"
+        android:onClick="goClear"
+        android:text="Clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button_get"
+        app:layout_constraintTop_toBottomOf="@+id/stock_symbol" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14sp"
+        android:id="@+id/favBar"
+        app:layout_constraintTop_toBottomOf="@+id/button_get">
+
+        <TextView
+            android:id="@+id/text_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="30sp"
+            android:text="Favorites"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AutoRefresh"
+            android:textColor="@android:color/primary_text_light"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5sp"
+            android:layout_marginLeft="55sp"/>
+
+        <Switch
+            android:id="@+id/auto_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10sp"
+            android:checked="false" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="30sp"
+            android:background="@null"
+            android:onClick="fetchRefresh"
+            android:src="@android:drawable/ic_popup_sync" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBar4"
+        android:layout_width="match_parent"
+        android:layout_height="320sp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/stock_symbol">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteX="0sp"
+            tools:layout_editor_absoluteY="303sp" />
+
+    </RelativeLayout>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favBar" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/favBar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/favProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_gravity="center"
+            tools:layout_editor_absoluteX="0sp"
+            tools:layout_editor_absoluteY="303sp" />
+    </RelativeLayout>
+
+    <ListView
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/favList"
+        android:longClickable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="298sp"
+        android:layout_margin="10sp"/>
+
+</android.support.constraint.ConstraintLayout>
